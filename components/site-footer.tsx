@@ -6,7 +6,7 @@ export function SiteFooter() {
     <footer className="site-footer">
       <div className="container footer-main">
         <div className="footer-brand">
-          <Image src="/facility-connect-markaj-logo.png" alt="Facility Connect Markaj" width={1536} height={1024} />
+          <Image src="/logo.jpg" alt="Facility Connect Markaj" width={250} height={112} />
           <p>Reinigung. Unterhalt. Werterhalt.</p>
         </div>
         <div><span className="footer-label">Unser Unternehmen</span><Link href="/">Startseite</Link><Link href="/dienstleistungen/">Dienstleistungen</Link><Link href="/kontakt/">Kontakt</Link></div>
