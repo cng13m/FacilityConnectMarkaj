@@ -19,7 +19,7 @@ export function Header() {
     <header className="site-header">
       <div className="nav-shell">
         <Link className="brand" href="/" aria-label="Facility Connect Markaj – Startseite">
-          <Image src="/logo.jpg" alt="Facility Connect Markaj" width={214} height={96} priority />
+          <Image src="/facility-connect-markaj-logo.png" alt="Facility Connect Markaj" width={1536} height={1024} priority />
         </Link>
         <nav className="desktop-nav" aria-label="Hauptnavigation">
           {links.map(([label, href]) => <Link className={pathname === href || (href !== "/" && pathname.startsWith(href.slice(0, -1))) ? "active" : ""} key={href} href={href}>{label}</Link>)}
