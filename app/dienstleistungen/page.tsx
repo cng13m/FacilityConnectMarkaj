@@ -1,33 +1,120 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Building2, Check, Construction, Hammer, Home, Recycle, Sparkles, Sprout, Wrench } from "lucide-react";
+import { Check } from "lucide-react";
 import { Header } from "@/components/header";
 import { SiteFooter } from "@/components/site-footer";
 import type { Metadata } from "next";
 
-export const metadata: Metadata = { title: "Dienstleistungen", description: "Reinigung, Hauswartung, Gebäudeunterhalt, Gartenpflege und weitere Facility Services." };
+export const metadata: Metadata = {
+  title: "Dienstleistungen",
+  description: "Professionelle Reinigung, Hauswartung und Gebäudeunterhalt für private und gewerbliche Liegenschaften.",
+};
 
 const services = [
-  { icon: Sparkles, title: "Spezialreinigung", text: "Bei starken oder hartnäckigen Verschmutzungen braucht es Erfahrung, geeignete Mittel und eine präzise Arbeitsweise. Wir reinigen anspruchsvolle Flächen im Innen- und Aussenbereich fachgerecht.", points: ["Fassaden- und Glasreinigung", "Grund- und Tiefenreinigung", "Individuelle Reinigungslösungen"] },
-  { icon: Wrench, title: "Hauswartung & Gebäudeunterhalt", text: "Wir behalten Ihre Liegenschaft im Blick und kümmern uns zuverlässig um den laufenden Unterhalt. So bleiben Funktion, Sicherheit und ein gepflegter Gesamteindruck langfristig erhalten.", points: ["Kontrollgänge und technischer Dienst", "Treppenhaus- und Allgemeinreinigung", "Kleinreparaturen und Unterhalt"] },
-  { icon: Building2, title: "Büro- & Gebäudereinigung", text: "Saubere Arbeits- und Gemeinschaftsräume schaffen Wohlbefinden und hinterlassen einen professionellen Eindruck. Einsatzzeiten und Reinigungsintervalle stimmen wir auf Ihren Betrieb ab.", points: ["Böden und Oberflächen", "Sanitär- und Gemeinschaftsräume", "Türen, Rahmen und Glasflächen"] },
-  { icon: Recycle, title: "Umzugsreinigung", text: "Wir übernehmen die gründliche Endreinigung Ihrer Wohnung oder Ihres Hauses, damit Sie sich auf den Umzug und eine entspannte Übergabe konzentrieren können.", points: ["Komplette Wohnungsendreinigung", "Küche, Bad, Fenster und Storen", "Flexible Terminplanung"] },
-  { icon: Home, title: "Privatreinigung", text: "Auf Wunsch übernehmen wir die regelmässige Reinigung Ihres Zuhauses oder eine intensive Grundreinigung. Persönlich, diskret und auf Ihren Haushalt abgestimmt.", points: ["Regelmässige Wohnungsreinigung", "Einmalige Grundreinigung", "Individuell definierter Leistungsumfang"] },
-  { icon: Construction, title: "Bau- & Fassadenreinigung", text: "Nach Neu- oder Umbauten entfernen wir Baustaub, Rückstände und Verschmutzungen professionell. Auch Fassaden und Aussenflächen bringen wir wieder in einen gepflegten Zustand.", points: ["Bauzwischen- und Bauendreinigung", "Fenster, Rahmen und Storen", "Fassaden- und Aussenflächen"] },
-  { icon: Sprout, title: "Garten & saisonale Arbeiten", text: "Wir unterstützen Sie bei der Pflege von Aussenbereichen und saisonalen Aufgaben, damit Ihre Liegenschaft das ganze Jahr über einladend bleibt.", points: ["Garten- und Umgebungspflege", "Laub- und saisonale Arbeiten", "Individuelle Objektbetreuung"] },
-  { icon: Hammer, title: "Montage, Räumung & Entsorgung", text: "Von kleineren Montagearbeiten bis zur koordinierten Räumung bieten wir praktische Unterstützung rund um Ihre Immobilie – effizient und unkompliziert.", points: ["Montage und Demontage", "Räumungen", "Fachgerechte Entsorgung"] },
+  {
+    title: "Spezialreinigung",
+    image: "/service-1.jpg",
+    imageAlt: "Professionelle Spezialreinigung eines Steinbodens",
+    text: "Hartnäckige Verschmutzungen und empfindliche Oberflächen verlangen mehr als eine gewöhnliche Reinigung. Wir wählen das passende Verfahren, die richtigen Mittel und arbeiten sorgfältig im Innen- und Aussenbereich.",
+    points: ["Grund- und Tiefenreinigung", "Fassaden- und Glasreinigung", "Reinigung nach Bau- oder Renovationsarbeiten"],
+  },
+  {
+    title: "Hauswartung",
+    image: "/service-2.jpg",
+    imageAlt: "Hauswart bei einem Kontrollgang in einer gepflegten Liegenschaft",
+    text: "Eine gut betreute Liegenschaft bleibt sicher, funktional und einladend. Wir übernehmen regelmässige Kontrollgänge und koordinieren die laufenden Arbeiten rund um Ihr Objekt – zuverlässig und mit einem festen Ansprechpartner.",
+    points: ["Treppenhaus- und Allgemeinreinigung", "Technischer Dienst und Kontrollgänge", "Gartenpflege, Winterdienst und Umgebung"],
+  },
+  {
+    title: "Gebäudereinigung",
+    image: "/service-3.jpg",
+    imageAlt: "Professionelle Reinigung einer modernen Glasfassade",
+    text: "Wir pflegen Gebäude gründlich und werterhaltend. Von der regelmässigen Unterhaltsreinigung bis zu anspruchsvollen Glas- und Fassadenflächen erhalten Sie eine Lösung, die auf Nutzung, Material und Objektgrösse abgestimmt ist.",
+    points: ["Fenster, Storen und Fensterläden", "Fassaden und Aussenflächen", "Bauendreinigung von Neu- und Umbauten"],
+  },
+  {
+    title: "Büroreinigung",
+    image: "/service-4.jpg",
+    imageAlt: "Reinigung eines hellen modernen Büros",
+    text: "Saubere Arbeitsplätze schaffen Wohlbefinden und einen professionellen Eindruck. Wir planen die Einsätze passend zu Ihrem Betrieb und bringen sämtliches Material für die fachgerechte Reinigung und Pflege mit.",
+    points: ["Böden, Oberflächen und Mobiliar", "Sanitär- und Gemeinschaftsräume", "Türen, Rahmen und hygienische Kontaktflächen"],
+  },
+  {
+    title: "Umzugsreinigung",
+    image: "/service-5.jpg",
+    imageAlt: "Gründliche Umzugsreinigung einer leeren Wohnung",
+    text: "Beim Umzug zählt eine saubere und termingerechte Übergabe. Wir reinigen Ihre Wohnung oder Ihr Haus vollständig und kümmern uns um die Details, damit Sie Ihre Zeit für den eigentlichen Umzug nutzen können.",
+    points: ["Komplette Wohnungsendreinigung", "Küche, Bad, Fenster und Storen", "Auf Wunsch mit Abnahmebegleitung"],
+  },
+  {
+    title: "Privatreinigung",
+    image: "/service-6.jpg",
+    imageAlt: "Diskrete Reinigung in einem gepflegten Privathaushalt",
+    text: "Mehr Freizeit und ein Zuhause, in dem Sie sich wohlfühlen: Wir übernehmen die regelmässige Wohnungsreinigung oder bringen Ihre Räume mit einer einmaligen Grundreinigung wieder in einen rundum gepflegten Zustand.",
+    points: ["Regelmässige Wohnungsreinigung", "Einmalige Grundreinigung", "Persönlich definierter Leistungsumfang"],
+  },
 ] as const;
 
 export default function DienstleistungenPage() {
-  return <main>
-    <Header />
-    <section className="page-hero services-hero"><Image src="/hero-building.png" alt="Modern gepflegte Liegenschaft" fill priority sizes="100vw" /><div className="page-hero-overlay" /><div className="container"><p className="kicker light">Facility Connect Markaj</p><h1>Unsere Dienstleistungen</h1><p>Die Pflege Ihrer Objekte ist eine vertrauensvolle Aufgabe. Wir wissen Ihren Auftrag und Ihr Vertrauen zu schätzen.</p><Link className="button" href="/kontakt/">Jetzt anfragen</Link></div></section>
-    <section className="service-details section"><div className="container">
-      <div className="center-heading"><p className="kicker">Alles aus einer Hand</p><h2>Leistungen für jede Liegenschaft</h2><p>Professionelle Lösungen für Privatkunden, Unternehmen und Liegenschaftsverwaltungen.</p></div>
-      <div className="detail-grid">{services.map(({ icon: Icon, title, text, points }) => <article key={title}><span className="detail-icon"><Icon /></span><div><h2>{title}</h2><p>{text}</p><ul>{points.map(point => <li key={point}><Check />{point}</li>)}</ul></div></article>)}</div>
-    </div></section>
-    <section className="process-section section"><div className="container"><div className="center-heading"><p className="kicker">Einfach und persönlich</p><h2>So funktioniert die Zusammenarbeit</h2></div><div className="process-grid"><div><span>01</span><h3>Offerte einholen</h3><p>Sie beschreiben uns Ihren Bedarf oder vereinbaren eine Besichtigung.</p></div><div><span>02</span><h3>Leistung abstimmen</h3><p>Wir definieren Umfang, Einsatzzeit und transparente Konditionen.</p></div><div><span>03</span><h3>Zuverlässig ausführen</h3><p>Unser Team erledigt den Auftrag sorgfältig und termingerecht.</p></div></div></div></section>
-    <section className="home-cta"><div className="container"><p className="kicker light">Persönlich beraten</p><h2>Welche Leistung dürfen wir für Sie übernehmen?</h2><p>Wir stellen Ihnen eine passende Lösung für Ihre Liegenschaft zusammen.</p><Link className="button button-white" href="/kontakt/">Offerte anfragen</Link></div></section>
-    <SiteFooter />
-  </main>;
+  return (
+    <main>
+      <Header />
+
+      <section className="page-hero services-hero">
+        <Image src="/hero-building.png" alt="Modern gepflegte Liegenschaft" fill priority sizes="100vw" />
+        <div className="page-hero-overlay" />
+        <div className="container">
+          <p className="kicker light">Facility Connect Markaj</p>
+          <h1>Unsere Dienstleistungen</h1>
+          <p>Die Pflege Ihrer Objekte ist eine vertrauensvolle Aufgabe. Wir bieten die passende Betreuung für private und gewerbliche Liegenschaften.</p>
+          <Link className="button" href="/kontakt/">Jetzt anfragen</Link>
+        </div>
+      </section>
+
+      <section className="service-showcase section">
+        <div className="container">
+          <div className="service-intro">
+            <p className="kicker">Reinigung und Werterhalt</p>
+            <h2>Saubere Lösungen für jeden Bereich</h2>
+            <p>Persönlich geplant, sorgfältig ausgeführt und genau auf Ihre Liegenschaft abgestimmt.</p>
+          </div>
+
+          <div className="service-feature-list">
+            {services.map(({ title, image, imageAlt, text, points }, index) => (
+              <article className={`service-feature${index % 2 ? " service-feature-reverse" : ""}`} key={title}>
+                <div className="service-feature-image">
+                  <Image src={image} alt={imageAlt} fill sizes="(max-width: 900px) 90vw, 540px" />
+                </div>
+                <div className="service-feature-copy">
+                  <p className="service-number">{String(index + 1).padStart(2, "0")}</p>
+                  <h2>{title}</h2>
+                  <p>{text}</p>
+                  <ul>
+                    {points.map((point) => <li key={point}><Check />{point}</li>)}
+                  </ul>
+                  <Link className="arrow-link" href="/kontakt/">Offerte anfragen <span aria-hidden="true">→</span></Link>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="process-section section">
+        <div className="container">
+          <div className="center-heading"><p className="kicker">Einfach und persönlich</p><h2>So funktioniert die Zusammenarbeit</h2></div>
+          <div className="process-grid">
+            <div><span>01</span><h3>Offerte einholen</h3><p>Sie beschreiben uns Ihren Bedarf oder vereinbaren eine Besichtigung.</p></div>
+            <div><span>02</span><h3>Leistung abstimmen</h3><p>Wir definieren Umfang, Einsatzzeit und transparente Konditionen.</p></div>
+            <div><span>03</span><h3>Zuverlässig ausführen</h3><p>Unser Team erledigt den Auftrag sorgfältig und termingerecht.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section className="home-cta">
+        <div className="container"><p className="kicker light">Persönlich beraten</p><h2>Welche Leistung dürfen wir für Sie übernehmen?</h2><p>Wir stellen Ihnen eine passende Lösung für Ihre Liegenschaft zusammen.</p><Link className="button button-white" href="/kontakt/">Offerte anfragen</Link></div>
+      </section>
+      <SiteFooter />
+    </main>
+  );
 }
