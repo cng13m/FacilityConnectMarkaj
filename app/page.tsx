@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ArrowDownRight, ArrowRight, Building2, Check, ClipboardCheck, Construction, Hammer, Home, Leaf, Recycle, ShieldCheck, Sparkles, Sprout, Wrench } from "lucide-react";
+import { ArrowRight, Building2, Check, ClipboardCheck, Construction, Hammer, Home, Leaf, Recycle, ShieldCheck, Sparkles, Sprout, Wrench } from "lucide-react";
 import { Header } from "@/components/header";
 import { ContactForm } from "@/components/contact-form";
 
@@ -19,29 +19,28 @@ export default function HomePage() {
   return <main id="top">
     <Header />
     <section className="hero">
-      <Image className="hero-image" src="/hero-facility-connect.png" alt="Professionelle Fensterreinigung in einer modernen Liegenschaft" fill priority sizes="100vw" />
+      <Image className="hero-image" src="/hero-building.png" alt="Moderne und gepflegte Geschäftsliegenschaft" fill priority sizes="100vw" />
       <div className="hero-overlay" />
       <div className="hero-content container">
-        <p className="eyebrow light"><span /> Facility Services mit Weitblick</p>
-        <h1>Wir erhalten Werte.<br /><em>Jeden Tag.</em></h1>
-        <p className="hero-copy">Professionelle Reinigung und zuverlässiger Unterhalt für Liegenschaften, die langfristig überzeugen.</p>
+        <p className="eyebrow"><span /> Reinigung. Unterhalt. Werterhalt.</p>
+        <h1>Saubere Räume.<br /><em>Bessere Lebensqualität.</em></h1>
+        <p className="hero-copy">Professionelle Reinigung und Facility Services, auf die Sie sich verlassen können.</p>
         <div className="hero-actions">
-          <a className="button" href="#kontakt">Kostenlose Offerte <ArrowRight size={18} /></a>
-          <a className="text-link light" href="#leistungen">Leistungen entdecken <ArrowDownRight size={18} /></a>
+          <a className="button" href="#kontakt">Offerte anfragen</a>
+          <a className="button button-outline" href="#leistungen">Unsere Leistungen</a>
         </div>
       </div>
-      <div className="hero-proof"><div><strong>Persönlich</strong><span>Direkte Betreuung</span></div><div><strong>Flexibel</strong><span>Einsatz nach Bedarf</span></div><div><strong>Zuverlässig</strong><span>Qualität mit System</span></div></div>
     </section>
+
+    <section className="services section" id="leistungen"><div className="container">
+      <div className="section-heading"><div><p className="eyebrow"><span /> Unsere Leistungen</p><h2>Was wir für Sie tun</h2></div><p>Von der regelmässigen Reinigung bis zur umfassenden Objektbetreuung – zuverlässig aus einer Hand.</p></div>
+      <div className="service-grid">{services.map(({ icon: Icon, n, title, text }) => <article className="service-card" key={title}><div className="service-top"><Icon size={30} strokeWidth={1.6} /><span>{n}</span></div><h3>{title}</h3><p>{text}</p><a href="#kontakt">Offerte anfragen <ArrowRight size={16} /></a></article>)}</div>
+    </div></section>
 
     <section className="intro section container" id="ueber-uns">
       <div className="intro-label"><p className="eyebrow"><span /> Facility Connect Markaj</p><div className="seal"><ShieldCheck size={28} /><span>Schweizer<br />Qualitätsanspruch</span></div></div>
       <div className="intro-copy"><h2>Eine Ansprechperson.<br /><em>Alles aus einer Hand.</em></h2><p>Wir sind ein modernes Schweizer Dienstleistungsunternehmen für Reinigung, Unterhalt und Werterhalt von Immobilien. Mit persönlicher Betreuung, sorgfältiger Arbeit und flexiblen Lösungen halten wir Ihre Liegenschaft sauber, funktionstüchtig und wertbeständig.</p><a className="text-link" href="#qualitaet">Was uns auszeichnet <ArrowRight size={18} /></a></div>
     </section>
-
-    <section className="services section" id="leistungen"><div className="container">
-      <div className="section-heading"><div><p className="eyebrow light"><span /> Unsere Leistungen</p><h2>Für jedes Objekt.<br /><em>Für jeden Anspruch.</em></h2></div><p>Von der regelmässigen Reinigung bis zur umfassenden Objektbetreuung: Wir verbinden Leistungen, damit Sie weniger koordinieren müssen.</p></div>
-      <div className="service-grid">{services.map(({ icon: Icon, n, title, text }) => <article className="service-card" key={title}><div className="service-top"><Icon size={30} strokeWidth={1.6} /><span>{n}</span></div><h3>{title}</h3><p>{text}</p><a href="#kontakt">Offerte anfragen <ArrowRight size={16} /></a></article>)}</div>
-    </div></section>
 
     <section className="value section" id="qualitaet"><div className="container value-grid">
       <div className="value-visual"><div className="monogram">FC</div><div className="value-caption"><Wrench size={20} /><span>Reinigung.<br />Unterhalt.<br />Werterhalt.</span></div></div>

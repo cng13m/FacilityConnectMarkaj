@@ -5,9 +5,9 @@ import { Menu, X } from "lucide-react";
 import { useState } from "react";
 
 const links = [
+  ["Home", "#top"],
   ["Leistungen", "#leistungen"],
   ["Über uns", "#ueber-uns"],
-  ["Qualität", "#qualitaet"],
   ["Kontakt", "#kontakt"],
 ];
 
@@ -20,7 +20,7 @@ export function Header() {
           <Image src="/logo.jpg" alt="Facility Connect Markaj" width={214} height={96} priority />
         </a>
         <nav className="desktop-nav" aria-label="Hauptnavigation">
-          {links.map(([label, href]) => <a key={href} href={href}>{label}</a>)}
+          {links.map(([label, href], index) => <a className={index === 0 ? "active" : ""} key={href} href={href}>{label}</a>)}
         </nav>
         <a className="button button-small desktop-cta" href="#kontakt">Offerte anfragen</a>
         <button className="menu-button" onClick={() => setOpen(!open)} aria-expanded={open} aria-controls="mobile-nav" aria-label={open ? "Menü schliessen" : "Menü öffnen"}>
