@@ -26,15 +26,15 @@ export default function HomePage() {
       <Image src="/hero-facade-cleaning.png" alt="Professionelle Fassadenreinigung an einem modernen Gebäude" fill priority sizes="100vw" />
       <div className="home-hero-wash" />
       <div className="container home-hero-content">
-        <p className="kicker">Reinigung. Unterhalt. Werterhalt.</p>
-        <h1>Ihr professioneller Partner<br />für Facility Services</h1>
-        <p>Sauberkeit verbindet – Qualität überzeugt.</p>
+        <h1>Ihr professioneller Partner<br />für Reinigung und Unterhalt</h1>
+        <p>sauber & gepflegt.</p>
         <div className="hero-buttons"><Link className="button" href="/kontakt/">Jetzt anfragen</Link><Link className="button button-soft" href="/dienstleistungen/">Unsere Dienste</Link></div>
       </div>
     </section>
 
-    <section className="quick-services container" aria-label="Leistungsübersicht">
-      {quickServices.map(([Icon, label]) => <Link href="/dienstleistungen/" key={label}><Icon /><span>{label}</span></Link>)}
+    <section className="quick-services" aria-label="Leistungsübersicht">
+      <div className="quick-row quick-primary container">{quickServices.slice(0, 3).map(([Icon, label]) => <Link href="/dienstleistungen/" key={label}><Icon /><span>{label}</span></Link>)}</div>
+      <div className="quick-row quick-secondary container">{quickServices.slice(3).map(([Icon, label]) => <Link href="/dienstleistungen/" key={label}><Icon /><span>{label}</span></Link>)}</div>
     </section>
 
     <section className="about-section section container">
@@ -47,7 +47,7 @@ export default function HomePage() {
       <div className="more-grid">{moreServices.map(([Icon, title, text]) => <article key={title}><span className="service-icon"><Icon /></span><div><h3>{title}</h3><p>{text}</p></div></article>)}</div>
     </div></section>
 
-    <section className="quality-band"><div className="container quality-grid"><div><p className="kicker light">Unser Qualitätsversprechen</p><h2>Professionell, zuverlässig und mit Leidenschaft.</h2></div><div className="quality-points"><p><strong>Termingerecht</strong><span>Wir halten Zusagen und planen vorausschauend.</span></p><p><strong>Transparent</strong><span>Faire Preise und klar definierte Leistungen.</span></p><p><strong>Persönlich</strong><span>Direkte Betreuung und kurze Entscheidungswege.</span></p><p><strong>Nachhaltig</strong><span>Sorgfalt für den langfristigen Werterhalt.</span></p></div></div></section>
+    <section className="quality-band"><div className="container quality-grid"><div><p className="kicker">Unser Qualitätsversprechen</p><h2>Professionell, zuverlässig und mit Leidenschaft.</h2></div><div className="quality-points"><p><strong>Termingerecht</strong><span>Wir halten Zusagen und planen vorausschauend.</span></p><p><strong>Transparent</strong><span>Faire Preise und klar definierte Leistungen.</span></p><p><strong>Persönlich</strong><span>Direkte Betreuung und kurze Entscheidungswege.</span></p><p><strong>Nachhaltig</strong><span>Sorgfalt für den langfristigen Werterhalt.</span></p></div></div></section>
 
     <section className="home-cta"><div className="container"><p className="kicker light">Jetzt Angebot sichern</p><h2>Ihre Liegenschaft verdient die beste Pflege.</h2><p>Erzählen Sie uns von Ihrem Bedarf. Wir beraten Sie persönlich und unverbindlich.</p><Link className="button button-white" href="/kontakt/">Offerte anfragen</Link></div></section>
     <SiteFooter />
