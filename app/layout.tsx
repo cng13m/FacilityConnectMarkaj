@@ -3,7 +3,10 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://facility-connect-markaj.ch"),
-  title: "Facility Connect Markaj | Reinigung, Unterhalt, Werterhalt",
+  title: {
+    default: "Facility Connect Markaj | Reinigung, Unterhalt, Werterhalt",
+    template: "%s | Facility Connect Markaj",
+  },
   description:
     "Professionelle Facility Services für Privatkunden, Unternehmen und Liegenschaftsverwaltungen – zuverlässig, persönlich und nachhaltig.",
   openGraph: {
