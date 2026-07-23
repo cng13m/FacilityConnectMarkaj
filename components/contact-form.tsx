@@ -3,7 +3,7 @@
 import { FormEvent } from "react";
 import { ArrowUpRight } from "lucide-react";
 
-const recipient = "info@facility-connect-markaj.ch";
+const recipient = "facilityconnectmarkaj@gmail.com";
 
 export function ContactForm() {
   function submit(event: FormEvent<HTMLFormElement>) {
@@ -41,10 +41,10 @@ export function ContactForm() {
         <label>Dienstleistung
           <select name="service" defaultValue="" required>
             <option value="" disabled>Bitte auswählen</option>
-            <option>Unterhalts- & Büroreinigung</option><option>Fensterreinigung</option>
-            <option>Umzugsreinigung</option><option>Bau- & Spezialreinigung</option>
-            <option>Hauswartung & Kontrollgänge</option><option>Garten & saisonale Arbeiten</option>
-            <option>Räumung & Entsorgung</option><option>Montage & Kleinreparaturen</option>
+            <option>Hauswartung</option><option>Reinigung</option>
+            <option>Gartenunterhalt</option><option>Winterdienst</option>
+            <option>Reparaturen & Montagen</option><option>Umzug & Entsorgung</option>
+            <option>Liegenschaftsservice</option>
             <option>Andere Anfrage</option>
           </select>
         </label>

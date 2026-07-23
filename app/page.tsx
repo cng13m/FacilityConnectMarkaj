@@ -1,22 +1,22 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Building2, Check, Construction, Hammer, Home, Recycle, Sparkles, Sprout, Wrench } from "lucide-react";
+import { ArrowRight, Building2, Check, Hammer, Recycle, Sparkles, Sprout, Wrench } from "lucide-react";
 import { Header } from "@/components/header";
 import { SiteFooter } from "@/components/site-footer";
 
 const quickServices = [
-  [Home, "Privatreinigung"], [Building2, "Büro- & Gebäudereinigung"],
-  [Recycle, "Umzugsreinigung"], [Sparkles, "Fensterreinigung"],
-  [Wrench, "Spezialreinigung"], [Construction, "Baureinigung"],
+  [Wrench, "Hauswartung"], [Sparkles, "Reinigung"],
+  [Sprout, "Garten & Winterdienst"], [Hammer, "Reparaturen & Montagen"],
+  [Recycle, "Umzug & Entsorgung"], [Building2, "Liegenschaftsservice"],
 ] as const;
 
 const moreServices = [
-  [Sparkles, "Fenster- & Glasreinigung", "Streifenfreie Fenster, Glasflächen und Rahmen – innen wie aussen."],
-  [Building2, "Unterhaltsreinigung", "Regelmässige Pflege für saubere und einladende Geschäfts- und Gemeinschaftsräume."],
-  [Wrench, "Hauswartung", "Kontrollgänge, Kleinreparaturen und zuverlässige Betreuung Ihrer Liegenschaft."],
-  [Sprout, "Garten & Saisonarbeiten", "Gepflegte Aussenbereiche und saisonale Unterstützung rund um Ihr Objekt."],
-  [Recycle, "Räumung & Entsorgung", "Effiziente Räumungen und fachgerechte Entsorgung – sauber koordiniert."],
-  [Hammer, "Montagearbeiten", "Praktische Unterstützung bei Montage, Demontage und kleineren Arbeiten."],
+  [Wrench, "Hauswartung", "Technische Kontrollen, Kleinreparaturen, Pikettdienst und die Koordination von Handwerkern."],
+  [Sparkles, "Reinigung", "Unterhalts-, Büro-, Umzugs-, Bau-, Fenster-, Fassaden- und Tiefgaragenreinigung."],
+  [Sprout, "Garten & Winterdienst", "Gartenpflege, Schneeräumung und sichere Zugänge zu jeder Jahreszeit."],
+  [Hammer, "Reparaturen & Montagen", "Montagen, Silikonfugen, Demontagen und kleinere Renovationsarbeiten."],
+  [Recycle, "Umzug & Entsorgung", "Räumungen, Sperrgutentsorgung und Transportservice aus einer Hand."],
+  [Building2, "Liegenschaftsservice", "Objektkontrollen, Schlüsselverwaltung, Abfallmanagement und persönliche Betreuung."],
 ] as const;
 
 export default function HomePage() {
@@ -39,7 +39,7 @@ export default function HomePage() {
 
     <section className="about-section section container">
       <div className="about-image"><Image src="/hero-building.png" alt="Gepflegte moderne Geschäftsliegenschaft" fill sizes="(max-width: 800px) 100vw, 45vw" /></div>
-      <div className="about-copy"><p className="kicker">Ihr Partner für jeden Bereich</p><h2>Eine Ansprechperson.<br />Alles aus einer Hand.</h2><p>Facility Connect Markaj ist ein modernes Schweizer Dienstleistungsunternehmen für Reinigung, Unterhalt und Werterhalt von Immobilien. Wir betreuen Privatkunden, Unternehmen und Liegenschaftsverwaltungen persönlich, sorgfältig und flexibel.</p><ul><li><Check /> Qualifizierte und sorgfältige Ausführung</li><li><Check /> Flexible Lösungen für Ihren Bedarf</li><li><Check /> Zuverlässige und persönliche Betreuung</li><li><Check /> Umweltbewusste Arbeitsmethoden</li></ul><Link className="arrow-link" href="/dienstleistungen/">Alle Dienstleistungen <ArrowRight /></Link></div>
+      <div className="about-copy"><p className="kicker">Ihr Partner für jeden Bereich</p><h2>Eine Ansprechperson.<br />Alles aus einer Hand.</h2><p>Facility Connect Markaj ist ein modernes Schweizer Dienstleistungsunternehmen mit Sitz in Wohlen AG. Wir betreuen Privatkunden, Unternehmen und Liegenschaftsverwaltungen rund um Reinigung, Unterhalt und Werterhalt persönlich, sorgfältig und flexibel.</p><ul><li><Check /> Qualifizierte und sorgfältige Ausführung</li><li><Check /> Flexible Lösungen für Ihren Bedarf</li><li><Check /> Zuverlässige und persönliche Betreuung</li><li><Check /> Umweltbewusste Arbeitsmethoden</li></ul><Link className="arrow-link" href="/dienstleistungen/">Alle Dienstleistungen <ArrowRight /></Link></div>
     </section>
 
     <section className="more-services section"><div className="container">
