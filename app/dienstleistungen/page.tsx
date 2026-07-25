@@ -114,7 +114,7 @@ export default function DienstleistungenPage() {
 
       <section className="service-showcase section">
         <div className="container">
-          <div className="service-intro">
+          <div className="service-intro" data-reveal="up">
             <p className="kicker">Reinigung und Werterhalt</p>
             <h2>Saubere Lösungen für jeden Bereich</h2>
             <p>Persönlich geplant, sorgfältig ausgeführt und genau auf Ihre Liegenschaft abgestimmt.</p>
@@ -122,7 +122,7 @@ export default function DienstleistungenPage() {
 
           <div className="service-feature-list">
             {services.map(({ id, title, image, imageAlt, text, points }, index) => (
-              <article id={id} className={`service-feature${index % 2 ? " service-feature-reverse" : ""}`} key={title}>
+              <article id={id} className={`service-feature${index % 2 ? " service-feature-reverse" : ""}`} data-reveal={index % 2 ? "right" : "left"} key={title}>
                 <div className="service-feature-image">
                   <Image src={image} alt={imageAlt} fill sizes="(max-width: 900px) 90vw, 540px" />
                 </div>
@@ -143,17 +143,17 @@ export default function DienstleistungenPage() {
 
       <section className="process-section section">
         <div className="container">
-          <div className="center-heading"><p className="kicker">Einfach und persönlich</p><h2>So funktioniert die Zusammenarbeit</h2></div>
+          <div className="center-heading" data-reveal="up"><p className="kicker">Einfach und persönlich</p><h2>So funktioniert die Zusammenarbeit</h2></div>
           <div className="process-grid">
-            <div><span>01</span><h3>Offerte einholen</h3><p>Sie beschreiben uns Ihren Bedarf oder vereinbaren eine Besichtigung.</p></div>
-            <div><span>02</span><h3>Leistung abstimmen</h3><p>Wir definieren Umfang, Einsatzzeit und transparente Konditionen.</p></div>
-            <div><span>03</span><h3>Zuverlässig ausführen</h3><p>Unser Team erledigt den Auftrag sorgfältig und termingerecht.</p></div>
+            <div data-reveal="pop"><span>01</span><h3>Offerte einholen</h3><p>Sie beschreiben uns Ihren Bedarf oder vereinbaren eine Besichtigung.</p></div>
+            <div data-reveal="pop" data-reveal-delay="1"><span>02</span><h3>Leistung abstimmen</h3><p>Wir definieren Umfang, Einsatzzeit und transparente Konditionen.</p></div>
+            <div data-reveal="pop" data-reveal-delay="2"><span>03</span><h3>Zuverlässig ausführen</h3><p>Unser Team erledigt den Auftrag sorgfältig und termingerecht.</p></div>
           </div>
         </div>
       </section>
 
       <section className="home-cta">
-        <div className="container"><p className="kicker light">Persönlich beraten</p><h2>Welche Leistung dürfen wir für Sie übernehmen?</h2><p>Wir stellen Ihnen eine passende Lösung für Ihre Liegenschaft zusammen.</p><Link className="button button-white" href="/kontakt/">Offerte anfragen</Link></div>
+        <div className="container" data-reveal="pop"><p className="kicker light">Persönlich beraten</p><h2>Welche Leistung dürfen wir für Sie übernehmen?</h2><p>Wir stellen Ihnen eine passende Lösung für Ihre Liegenschaft zusammen.</p><Link className="button button-white" href="/kontakt/">Offerte anfragen</Link></div>
       </section>
       <SiteFooter />
     </main>

@@ -27,7 +27,7 @@ export function ContactForm() {
   }
 
   return (
-    <form className="contact-form" onSubmit={submit}>
+    <form className="contact-form" data-reveal="right" onSubmit={submit}>
       <div className="field-row">
         <label>Vorname<input name="firstName" autoComplete="given-name" placeholder="Vorname" required /></label>
         <label>Nachname<input name="name" autoComplete="family-name" placeholder="Nachname" required /></label>
