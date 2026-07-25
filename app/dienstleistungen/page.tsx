@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 const services = [
   {
     title: "Hauswartung",
-    image: "/service-2.jpg",
+    image: "/service-1.png",
     imageAlt: "Hauswart bei einem Kontrollgang in einer gepflegten Liegenschaft",
     text: "Wir kümmern uns zuverlässig um den laufenden Betrieb Ihrer Liegenschaft und sind auch dann für Sie da, wenn schnelle Unterstützung gefragt ist.",
     points: [
@@ -39,7 +39,7 @@ const services = [
   },
   {
     title: "Gartenunterhalt & Winterdienst",
-    image: "/hero-building.png",
+    image: "/service-3.png",
     imageAlt: "Gepflegte Aussenanlage einer modernen Liegenschaft",
     text: "Wir pflegen Ihre Aussenbereiche durch alle Jahreszeiten und sorgen im Winter für sichere Gehwege, Zufahrten und Parkplätze.",
     points: [
@@ -53,7 +53,7 @@ const services = [
   },
   {
     title: "Reparaturen & Montagen",
-    image: "/service-2.jpg",
+    image: "/service-4.png",
     imageAlt: "Mitarbeiter bei Arbeiten in einer gepflegten Liegenschaft",
     text: "Praktische Arbeiten rund um Ihre Immobilie erledigen wir sauber, flexibel und unkompliziert.",
     points: [
@@ -66,7 +66,7 @@ const services = [
   },
   {
     title: "Umzug & Entsorgung",
-    image: "/service-5.jpg",
+    image: "/service-5.png",
     imageAlt: "Leere Wohnung nach einer professionellen Räumung",
     text: "Ob einzelne Gegenstände oder eine komplette Wohnung: Wir organisieren Räumung, Entsorgung und Transport zuverlässig aus einer Hand.",
     points: [
@@ -78,7 +78,7 @@ const services = [
   },
   {
     title: "Liegenschaftsservice",
-    image: "/hero-building.png",
+    image: "/service-6.png",
     imageAlt: "Modern gepflegte Liegenschaft",
     text: "Wir behalten Ihre Liegenschaft im Blick und übernehmen wichtige organisatorische Aufgaben für einen reibungslosen, sicheren Betrieb.",
     points: [
