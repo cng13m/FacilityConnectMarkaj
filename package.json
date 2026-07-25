@@ -9,6 +9,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@fontsource-variable/manrope": "^5.3.0",
     "caniuse-lite": "1.0.30001759",
     "lucide-react": "latest",
     "next": "16.0.10",
