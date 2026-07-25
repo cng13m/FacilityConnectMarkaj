@@ -12,6 +12,7 @@ export const metadata: Metadata = {
 
 const services = [
   {
+    id: "hauswartung",
     title: "Hauswartung",
     image: "/service-1.png",
     imageAlt: "Hauswart bei einem Kontrollgang in einer gepflegten Liegenschaft",
@@ -25,6 +26,7 @@ const services = [
     ],
   },
   {
+    id: "reinigung",
     title: "Reinigung",
     image: "/service-4.jpg",
     imageAlt: "Professionelle Reinigung eines modernen Büros",
@@ -38,6 +40,7 @@ const services = [
     ],
   },
   {
+    id: "garten-winterdienst",
     title: "Gartenunterhalt & Winterdienst",
     image: "/service-3.png",
     imageAlt: "Gepflegte Aussenanlage einer modernen Liegenschaft",
@@ -52,6 +55,7 @@ const services = [
     ],
   },
   {
+    id: "reparaturen-montagen",
     title: "Reparaturen & Montagen",
     image: "/service-4.png",
     imageAlt: "Mitarbeiter bei Arbeiten in einer gepflegten Liegenschaft",
@@ -65,6 +69,7 @@ const services = [
     ],
   },
   {
+    id: "umzug-entsorgung",
     title: "Umzug & Entsorgung",
     image: "/service-5.png",
     imageAlt: "Leere Wohnung nach einer professionellen Räumung",
@@ -77,6 +82,7 @@ const services = [
     ],
   },
   {
+    id: "liegenschaftsservice",
     title: "Liegenschaftsservice",
     image: "/service-6.png",
     imageAlt: "Modern gepflegte Liegenschaft",
@@ -115,8 +121,8 @@ export default function DienstleistungenPage() {
           </div>
 
           <div className="service-feature-list">
-            {services.map(({ title, image, imageAlt, text, points }, index) => (
-              <article className={`service-feature${index % 2 ? " service-feature-reverse" : ""}`} key={title}>
+            {services.map(({ id, title, image, imageAlt, text, points }, index) => (
+              <article id={id} className={`service-feature${index % 2 ? " service-feature-reverse" : ""}`} key={title}>
                 <div className="service-feature-image">
                   <Image src={image} alt={imageAlt} fill sizes="(max-width: 900px) 90vw, 540px" />
                 </div>
