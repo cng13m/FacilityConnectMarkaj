@@ -17,7 +17,7 @@ export default function HomePage() {
   return <main>
     <Header />
     <section className="home-hero">
-      <Image src="/hero-facade-cleaning-v2.png" alt="Zwei Fachkräfte bei der professionellen Fassadenreinigung" fill priority sizes="100vw" />
+      <Image src="/hero-property-care.png" alt="Facility Manager vor einer modern gepflegten Liegenschaft" fill priority sizes="100vw" />
       <div className="home-hero-wash" />
       <div className="container home-hero-content">
         <h1>Ihr professioneller Partner<br />für Reinigung und Unterhalt</h1>
