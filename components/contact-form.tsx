@@ -1,33 +1,45 @@
 "use client";
 
-import { FormEvent } from "react";
+import { FormEvent, useState } from "react";
 import { ArrowUpRight } from "lucide-react";
 
-const recipient = "facilityconnectmarkaj@gmail.com";
+type FormStatus = "idle" | "submitting" | "success" | "error";
 
 export function ContactForm() {
-  function submit(event: FormEvent<HTMLFormElement>) {
+  const [status, setStatus] = useState<FormStatus>("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    const subject = `Offertanfrage: ${data.get("service")}`;
-    const body = [
-      `Name: ${data.get("firstName")} ${data.get("name")}`,
-      `Firma: ${data.get("company") || "–"}`,
-      `E-Mail: ${data.get("email")}`,
-      `Telefon: ${data.get("phone") || "–"}`,
-      `Dienstleistung: ${data.get("service")}`,
-      `Zimmer: ${data.get("rooms") || "–"}`,
-      `Fläche: ${data.get("area") || "–"} m²`,
-      `Serviceart: ${data.get("frequency")}`,
-      `Adresse: ${data.get("address") || "–"}`,
-      "",
-      String(data.get("message")),
-    ].join("\n");
-    window.location.href = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const form = event.currentTarget;
+    const data = Object.fromEntries(new FormData(form).entries());
+
+    setStatus("submitting");
+    setErrorMessage("");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      const result = await response.json() as { error?: string };
+
+      if (!response.ok) {
+        throw new Error(result.error || "Die Anfrage konnte nicht gesendet werden.");
+      }
+
+      form.reset();
+      setStatus("success");
+    } catch (error) {
+      setErrorMessage(error instanceof Error ? error.message : "Die Anfrage konnte nicht gesendet werden.");
+      setStatus("error");
+    }
   }
 
   return (
     <form className="contact-form" data-reveal="right" onSubmit={submit}>
+      <label className="contact-honeypot" aria-hidden="true">Website<input name="website" tabIndex={-1} autoComplete="off" /></label>
       <div className="field-row">
         <label>Vorname<input name="firstName" autoComplete="given-name" placeholder="Vorname" required /></label>
         <label>Nachname<input name="name" autoComplete="family-name" placeholder="Nachname" required /></label>
@@ -58,8 +70,14 @@ export function ContactForm() {
         <label>Adresse <span>(optional)</span><input name="address" autoComplete="street-address" placeholder="Strasse, Ort" /></label>
       </div>
       <label>Wie können wir helfen?<textarea name="message" rows={5} placeholder="Erzählen Sie uns kurz von Ihrer Liegenschaft und dem gewünschten Einsatz." required /></label>
-      <button className="button form-submit" type="submit">Anfrage vorbereiten <ArrowUpRight size={18} /></button>
-      <p className="form-note">Ihre Angaben werden in Ihrem E-Mail-Programm für den Versand vorbereitet.</p>
+      <button className="button form-submit" type="submit" disabled={status === "submitting"}>
+        {status === "submitting" ? "Wird gesendet …" : "Anfrage senden"} <ArrowUpRight size={18} />
+      </button>
+      <div className="form-status" aria-live="polite">
+        {status === "success" && <p className="form-success">Vielen Dank. Ihre Anfrage wurde erfolgreich gesendet.</p>}
+        {status === "error" && <p className="form-error">{errorMessage}</p>}
+      </div>
+      <p className="form-note">Ihre Angaben werden sicher übermittelt und ausschliesslich zur Bearbeitung Ihrer Anfrage verwendet.</p>
     </form>
   );
 }
