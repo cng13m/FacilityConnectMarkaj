@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Building2, Check, Hammer, Recycle, Sparkles, Sprout, Wrench } from "lucide-react";
+import { ArrowDown, ArrowRight, Building2, Check, Hammer, Recycle, Sparkles, Sprout, Wrench } from "lucide-react";
 import { Header } from "@/components/header";
 import { SiteFooter } from "@/components/site-footer";
 
@@ -25,7 +25,7 @@ export default function HomePage() {
         <div className="hero-buttons">
           <Link className="hero-services-link" href="/dienstleistungen/">
             <span>Unsere Dienste</span>
-            <span className="hero-services-icon" aria-hidden="true"><ArrowRight /></span>
+            <span className="hero-services-icon" aria-hidden="true"><ArrowDown /></span>
           </Link>
         </div>
       </div>
