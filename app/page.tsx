@@ -22,7 +22,12 @@ export default function HomePage() {
       <div className="container home-hero-content">
         <h1>Ihr professioneller Partner<br />für Reinigung und Unterhalt</h1>
         <p>sauber & gepflegt.</p>
-        <div className="hero-buttons"><Link className="button" href="/kontakt/">Jetzt anfragen</Link><Link className="button button-soft" href="/dienstleistungen/">Unsere Dienste</Link></div>
+        <div className="hero-buttons">
+          <Link className="hero-services-link" href="/dienstleistungen/">
+            <span>Unsere Dienste</span>
+            <span className="hero-services-icon" aria-hidden="true"><ArrowRight /></span>
+          </Link>
+        </div>
       </div>
     </section>
 

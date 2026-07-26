@@ -23,6 +23,7 @@ export function Header() {
         </Link>
         <nav className="desktop-nav" aria-label="Hauptnavigation">
           {links.map(([label, href]) => <Link className={pathname === href || (href !== "/" && pathname.startsWith(href.slice(0, -1))) ? "active" : ""} key={href} href={href}>{label}</Link>)}
+          <Link className="header-cta" href="/kontakt/">Jetzt anfragen</Link>
         </nav>
         <button className="menu-button" onClick={() => setOpen(!open)} aria-expanded={open} aria-controls="mobile-nav" aria-label={open ? "Menü schliessen" : "Menü öffnen"}>
           {open ? <X /> : <Menu />}
@@ -31,6 +32,7 @@ export function Header() {
       {open && (
         <nav id="mobile-nav" className="mobile-nav" aria-label="Mobile Navigation">
           {links.map(([label, href]) => <Link key={href} href={href} onClick={() => setOpen(false)}>{label}</Link>)}
+          <Link className="mobile-nav-cta" href="/kontakt/" onClick={() => setOpen(false)}>Jetzt anfragen</Link>
         </nav>
       )}
     </header>
