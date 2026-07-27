@@ -108,7 +108,7 @@ export default function DienstleistungenPage() {
           <p className="kicker light">Facility Connect Markaj</p>
           <h1>Unsere Dienstleistungen</h1>
           <p>Die Pflege Ihrer Objekte ist eine vertrauensvolle Aufgabe. Wir bieten die passende Betreuung für private und gewerbliche Liegenschaften.</p>
-          <Link className="button" href="/kontakt/">Jetzt anfragen</Link>
+          <Link className="button services-hero-cta" href="/kontakt/">Jetzt anfragen</Link>
         </div>
       </section>
 
