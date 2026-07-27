@@ -9,7 +9,6 @@ import { useState } from "react";
 const links = [
   ["Startseite", "/"],
   ["Dienstleistungen", "/dienstleistungen/"],
-  ["Kontakt", "/kontakt/"],
 ];
 
 export function Header() {
