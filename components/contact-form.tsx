@@ -49,7 +49,7 @@ export function ContactForm() {
         <label>E-Mail<input name="email" type="email" autoComplete="email" placeholder="name@firma.ch" required /></label>
       </div>
       <div className="field-row">
-        <label>Telefon <span>(optional)</span><input name="phone" type="tel" autoComplete="tel" placeholder="+41 ..." /></label>
+        <label>Telefon<input name="phone" type="tel" autoComplete="tel" placeholder="+41 ..." required /></label>
         <label>Dienstleistung
           <select name="service" defaultValue="" required>
             <option value="" disabled>Bitte auswählen</option>
@@ -62,8 +62,8 @@ export function ContactForm() {
         </label>
       </div>
       <div className="field-row">
-        <label>Anzahl Zimmer <span>(optional)</span><select name="rooms" defaultValue=""><option value="">Bitte auswählen</option><option>1 – 1.5</option><option>2 – 2.5</option><option>3 – 3.5</option><option>4 – 4.5</option><option>5 – 5.5</option><option>6 – 6.5</option><option>7+</option></select></label>
-        <label>Fläche in m² <span>(optional)</span><input name="area" inputMode="numeric" placeholder="z. B. 120" /></label>
+        <label>Anzahl Zimmer<select name="rooms" defaultValue="" required><option value="">Bitte auswählen</option><option>1 – 1.5</option><option>2 – 2.5</option><option>3 – 3.5</option><option>4 – 4.5</option><option>5 – 5.5</option><option>6 – 6.5</option><option>7+</option></select></label>
+        <label>Fläche in m²<input name="area" inputMode="numeric" placeholder="z. B. 120" required /></label>
       </div>
       <div className="field-row">
         <label>Serviceart<select name="frequency" defaultValue="Einmalig"><option>Einmalig</option><option>Regelmässig</option></select></label>

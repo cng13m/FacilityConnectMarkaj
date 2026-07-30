@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { EmailCopyButton } from "@/components/email-copy-button";
 
 export function SiteFooter() {
   return (
@@ -10,7 +11,7 @@ export function SiteFooter() {
           <p>Reinigung. Unterhalt. Werterhalt.</p>
         </div>
         <div><span className="footer-label">Unser Unternehmen</span><Link href="/">Startseite</Link><Link href="/dienstleistungen/">Dienstleistungen</Link><Link href="/kontakt/">Kontakt</Link></div>
-        <div><span className="footer-label">Kontakt</span><a href="tel:+41799176374">079 917 63 74</a><a href="mailto:facilityconnectmarkaj@gmail.com">facilityconnectmarkaj@gmail.com</a><p>Breitlohweg 1A<br />5610 Wohlen AG</p></div>
+        <div><span className="footer-label">Kontakt</span><a href="tel:+41799176374">079 917 63 74</a><EmailCopyButton variant="footer" /><p>Breitlohweg 1A<br />5610 Wohlen AG</p></div>
         <div><span className="footer-label">Unser Versprechen</span><p>Persönliche Betreuung</p><p>Faire Preise</p><p>Zuverlässige Ausführung</p></div>
       </div>
       <div className="container footer-bottom"><span>© {new Date().getFullYear()} Facility Connect Markaj</span></div>

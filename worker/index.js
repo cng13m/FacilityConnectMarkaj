@@ -64,7 +64,7 @@ async function handleContact(request, env) {
   const address = clean(payload.address, 240);
   const message = clean(payload.message, 4_000);
 
-  if (!firstName || !lastName || !email || !service || !message) {
+  if (!firstName || !lastName || !email || !phone || !service || !rooms || !area || !message) {
     return json({ error: "Bitte füllen Sie alle Pflichtfelder aus." }, 400);
   }
 

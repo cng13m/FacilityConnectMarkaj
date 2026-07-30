@@ -3,6 +3,7 @@ node_modules/
 out/
 .env*
 !.env.example
+RESEND
 npm-debug.log*
 *.tsbuildinfo
 next-env.d.ts
